@@ -1,13 +1,19 @@
 let gridCount = 16;
 drawGrid();
 
+
+//Function to draw Grid
 function drawGrid() {
     const container = document.querySelector('.container');
+    //If container already exists, erase it before drawing new Grid
     while(container.firstChild) {
         container.removeChild(container.firstChild);
     }
+
+    //Calculate box size based on gridCount variable
     let divSize = (1/gridCount * 100) + '%';
-    console.log(divSize);
+
+    //Draw Grid under container Div
     for(let i = 0; i < gridCount * gridCount; i++) {
         const div = document.createElement('div');
         div.setAttribute('id', `grid-${i}`);
@@ -24,7 +30,7 @@ function drawGrid() {
     }       
 }
 
-
+//Function for home page Button
 function handleClick() {
     let gridSize = prompt("Please select Grid Size", "16");
     gridCount = gridSize;
